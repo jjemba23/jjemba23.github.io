@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>your.harvard - Courses</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Academica Learning Page Template">
+	<meta name="keywords" content="academica, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="/static/img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/flaticon.css"/>
+	<link rel="stylesheet" href="/static/owl.carousel.css"/>
+	<link rel="stylesheet" href="/static/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="container">
+				<a href="/" class="site-logo">
+					<img src="/static/img/logo.png" alt="">
+				</a>
+				<div class="user-panel">
+					<a href="/logout"><i>Log Out</a></i>
+				</div>
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+				<ul class="main-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="https://thenypost.files.wordpress.com/2017/01/170128-harvard-university-feature.jpg?quality=90&strip=all">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="hero-text text-white">
+					<h2><i>Full Course Guide</i></h2>
+					<br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- Search section -->
+	<section class="multi-search-section">
+		<div class="msf-warp">
+			<div class="container">
+				<h5>Course Quick-Search</h5>
+				<form class="multi-search-form" action="/quicksearch" method="post">
+					<input type="text" placeholder="Course Title" name="course">
+					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
+				</form>
+			</div>
+		</div>
+	</section><br>
+
+		<br><br><br><section class="multi-search-section">
+		<div class="msf-warp">
+			<div class="container">
+				<h5>Advanced Course Search</h5>
+				<form class="multi-search-form" action="/" method="post">
+
+					<select class="form-control" name="department">
+						<option selected>Any Department</option>
+						<option>African & African American Studies</option>
+			            <option>Anthropology</option>
+			            <option>Applied Mathematics</option>
+			            <option>Astrophysics</option>
+			            <option>Biomedical Engineering</option>
+			            <option>Chemical and Physical Biology</option>
+			            <option>Chemistry</option>
+			            <option>Chemistry and Physics</option>
+			            <option>Classics</option>
+			            <option>Comparative Literature</option>
+			            <option>Computer Science</option>
+			            <option>Earth and Planetary Sciences</option>
+			            <option>East Asian Studies</option>
+			            <option>Economics</option>
+			            <option>Electrical Engineering</option>
+			            <option>Engineering Sciences</option>
+			            <option>English</option>
+			            <option>Environmental Science and Engineering</option>
+			            <option>Environmental Science and Public Policy</option>
+			            <option>Folklore and Mythology</option>
+			            <option>General Education</option>
+			            <option>Germanic Languages and Literatures</option>
+			            <option>Government</option>
+			            <option>History</option>
+			            <option>History and Literature</option>
+			            <option>History and Science</option>
+			            <option>History of Art and Architecture</option>
+			            <option>Human Developmental and Regenerative Biology</option>
+			            <option>Human Evolutionary Biology</option>
+			            <option>Integrative Biology</option>
+			            <option>Linguistics</option>
+			            <option>Mathematics</option>
+			            <option>Mechanical Engineering</option>
+			            <option>Molecular and Cellular Biology</option>
+			            <option>Music</option>
+			            <option>Near Eastern Languages and Civilizations</option>
+			            <option>Neurobiology</option>
+			            <option>Philosophy</option>
+			            <option>Physics</option>
+			            <option>Psychology</option>
+			            <option>Comparative Study of Religion</option>
+			            <option>Romance Languages and Literatures</option>
+			            <option>Slavic Languages and Literatures</option>
+			            <option>Social Studies</option>
+			            <option>Sociology</option>
+			            <option>South Asian Studies</option>
+			            <option>Special Concentrations</option>
+			            <option>Statistics</option>
+			            <option>Theater, Dance, and Media</option>
+			            <option>Visual and Environmental Studies</option>
+			            <option>Studies of Women, Gender, and Sexuality</option>
+				    </select>
+					<br>
+				    <select class="form-control" name="daytime">
+				    	<option selected>Any Time</option>
+						{% for each in range(times_len) %}
+						<option>{{ times[each] }}</option>
+        				{% endfor %}
+				    </select>
+					<br>
+				    <select class="form-control" name="overall">
+				      <option selected>Any Course Rating</option>
+				      <option>3.0+</option>
+				      <option>3.5+</option>
+				      <option>4.0+</option>
+				      <option>4.5+</option>
+				      <option>5</option>
+				    </select>
+					<br>
+				    <select class="form-control" name="instrat">
+				      <option selected>Any Instructor Rating</option>
+				      <option>3.0+</option>
+				      <option>3.5+</option>
+				      <option>4.0+</option>
+				      <option>4.5+</option>
+				      <option>5</option>
+				    </select>
+					<br>
+					<select class="form-control" name="workload">
+				      <option selected>Any Weekly Workload</option>
+				      <option>< 2 hrs</option>
+				      <option>2-4.9 hrs</option>
+				      <option>5-7.9 hrs</option>
+				      <option>8-10 hrs</option>
+				      <option>> 10 hrs</option>
+				    </select>
+				    <br>
+					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- Search section end -->
+	<table class="table table-dark"><br>
+    <thead>
+      <tr>
+      	<th scope="col">Term</th>
+        <th scope="col">Course ID</th>
+        <th scope="col">Course Title</th>
+        <th scope="col">Instructor</th>
+        <th scope="col">Date & Time</th>
+        <th scope="col">Course Overall</th>
+        <th scope="col">Instructor Overall</th>
+        <th scope="col">Weekly Workload</th>
+      </tr>
+    </thead>
+	<tbody>
+	{% for i in range(total) %}
+      <tr>
+      	  <td>{{ result[i].term }}</td>
+          <td>{{ result[i].id }}</td>
+          <td><a href="course?q={{ result[i].id }}">{{ result[i].title }}</a></td>
+          <td>{{ result[i].instructor }}</td>
+          <td>{{ result[i].daytime }}</td>
+          <td>{{ result[i].overall }}</td>
+          <td>{{ result[i].instrat }}</td>
+          <td>{{ result[i].work }}</td>
+      </tr>
+    {% endfor %}
+     </tbody>
+    </table>
+
+	<!-- Footer section -->
+	<footer class="footer-section spad pb-0">
+		<div class="container">
+			<div class="row text-white spad">
+				<div class="col-lg-3 col-sm-6 footer-widget">
+			</div>
+			<div class="footer-bottom">
+				<ul class="footer-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<p class="text-white  text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+
+
+
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/circle-progress.min.js"></script>
+	<script src="/static/js/main.js"></script>
+
+
+</body>
+</html>

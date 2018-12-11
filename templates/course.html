@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>your.harvard - {{ result[0].id }}</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Academica Learning Page Template">
+	<meta name="keywords" content="academica, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="/static/img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/flaticon.css"/>
+	<link rel="stylesheet" href="/static/owl.carousel.css"/>
+	<link rel="stylesheet" href="/static/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="container">
+				<a href="/" class="site-logo">
+					<img src="/static/img/logo.png" alt="">
+				</a>
+				<div class="user-panel">
+					<a href="/logout"><i>Log Out</a></i>
+				</div>
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+				<ul class="main-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="http://res.cloudinary.com/simpleview/image/upload/v1459368559/clients/boston/header_about_boston_cambridge_squares_harvard_f11a1802-5051-4874-8b51-8d9d652314c0.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="hero-text text-white">
+					<h2><i>{{ result[0].id }}</i></h2>
+					<h2><i>{{ result[0].title }}</i></h2>
+					<br><br><br><br><br><br>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+	<section>
+		<div class="container">
+			<br>{{ result[0].id }} - {{ result[0].title }}<br>
+			{{ result[0].term }}<br>
+			Department of {{ result[0].department }}<br>
+			Instructor: {{ result[0].instructor }}<br>
+			Time: {{ result[0].daytime }}<br><br>
+			Q Guide data: Course Overall: <b>{{ result[0].overall }}/5</b>, Instructor Rating: <b>{{ result[0].instrat }}/5</b>, Weekly Workload: <b>{{ result[0].work }} hrs</b><br><br>
+			Course Description:<i> {{ result[0].description }}</i><br><br>
+			General Eduation Fulfillment: {{ result[0].gen }}<br>
+			Divisional Distribution Fulfillment: {{ result[0].div }}<br><br>
+		</div>
+	</section>
+
+	<!-- course interest and comments-->
+	<section>
+	<div class = "container">
+	<div id="accordion" class="accordion-area">
+
+		<div class="panel">
+
+
+			<div class="panel-header" id="headingOne">
+				<button class="panel-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">See who is interested in this course!</button>
+			</div>
+
+			<div id="collapse1" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="panel-body">
+					<p>Interested in {{ result[0].title }}: {{ result[0].interest }}</p>
+						<br>
+						<div class = "container">
+							<a href="/interest?q={{ result[0].id }}" class="site-btn btn-2 mr-4 mb-4 mb-lg-0">{{ add_button }}<i class="fa"></i></a><br><br>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel">
+			<div class="panel-header" id="headingOne">
+				<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">See comments on this course!</button>
+			</div>
+			<div id="collapse2" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="panel-body">
+					<p>Comments:</p>
+						<ul>
+						{% for each in range(comlen) %}
+							<li><div class="container">
+								{{ comments[each] }}<br>
+							</div></li>
+						{% endfor %}
+						</ul>
+						<br><div class = "container">
+						<form class="contact-form" action="/comment?q={{ result[0].id }}" method="post">
+							<div class="col-md-12">
+								<textarea name="comment" placeholder="New Comment..."></textarea>
+							</div>
+							<button class="site-btn">Add Comment<i class="fa fa-angle-right"></i></button>
+						</form>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+	</div>
+	</section>
+
+	<!-- Search subsection -->
+	<br><br><br>
+	<section class="multi-search-section">
+		<div class="msf-warp">
+			<div class="container">
+				<h5>Search For Another Course: </h5>
+				<form class="multi-search-form" action="/quicksearch" method="post">
+					<input type="text" placeholder="Course Title" name="course">
+					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
+				</form>
+			</div>
+		</div>
+	</section><br>
+	<!-- Search section end -->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section spad pb-0">
+		<div class="container">
+			<div class="row text-white spad">
+				<div class="col-lg-3 col-sm-6 footer-widget">
+			</div>
+			<div class="footer-bottom">
+				<ul class="footer-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<p class="text-white  text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/circle-progress.min.js"></script>
+	<script src="/static/js/main.js"></script>
+
+
+</body>
+</html>

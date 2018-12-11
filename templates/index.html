@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>your.harvard - Portal</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Academica Learning Page Template">
+	<meta name="keywords" content="academica, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="/static/img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/static/icon-fonts/flaticon.css"/>
+	<link rel="stylesheet" href="/static/owl.carousel.css"/>
+	<link rel="stylesheet" href="/static/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="container">
+				<a href="/" class="site-logo">
+					<img src="/static/img/logo.png" alt="">
+				</a>
+				<div class="user-panel">
+					<a href="/logout"><i>Log Out</a></i>
+				</div>
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+				<ul class="main-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="/static/img/bg.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="hero-text text-white">
+					<h2><i>Welcome, {{ firstname }}</i></h2>
+					<p><b>With a greater emphasis on a more streamlined, user-friendly Harvard hub, Eric and Manny have crafted your.harvard--a smoother, more ergonomic website with straightforward course selection, social connectivity, and easier access to other important Harvard-affiliated resources (such as the Financial Aid Office, the Office of International Education, the Office of Career Services, etc.)</b></p>
+					<div class="hero-author">
+						<div class="hero-author-pic set-bg" data-setbg="/static/img/hero-author.jpg"></div>
+						<h5>- Created by Eric Jjemba & Emmanuel Garrison-Hooks</h5>
+						<a href="#" class="site-btn">See Details <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- Search section -->
+	<section class="multi-search-section">
+		<div class="msf-warp">
+			<div class="container">
+				<h5>Course Quick-Search</h5>
+				<form class="multi-search-form" action="/quicksearch" method="post">
+					<input type="text" placeholder="Course Title" name="course">
+					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- Search section end -->
+
+	<!-- Courses section  -->
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="sec-title text-center">
+				<span><i>For You:</i></span>
+				<h2>Popular Courses</h2>
+			</div>
+			<div class="course-slider owl-carousel">
+				<!-- popcourse1 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/cs50pic.jpg" alt="">
+						<div class="price">Fri 9AM-11:45AM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=COMPSCI 50">Introduction to Computer Science</a></h5>
+							<p><i>COMPSCI 50</i></p>
+							<p><b>Fall 2018</b></p>
+							<p>Introduction to the intellectual enterprises of computer science and the art of programming. This course teaches you how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming. Designed for concentrators and non-concentrators alike, with or without prior programming experience. 68% of CS50 students have never taken CS before.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 3.7/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~12.3</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/davidjmalan.jpg"></div>
+							<h6>David J. Malan, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+				<!-- popcourse2 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/ec10pic.jpg" alt="">
+						<div class="price">MWF 12PM-1:15PM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=ECON 10A">Principles of Economics</a></h5>
+							<p><i>ECON 10A</i></p>
+							<p><b>Fall 2018</b></p>
+							<p>Introduction to economic issues and basic principles and methods of microeconomics: how markets work, market efficiency and market failure, firm and consumer behavior, policy issues such as taxation, international trade, the environment, and the distribution of income.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 3.2/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~6.4</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/gregm.jpg"></div>
+							<h6>Nicholas Greg Mankiw, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+
+				<!-- popcourse3 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/ls1b.jpg" alt="">
+						<div class="price">TTh 1:30PM-2:45PM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=LIFESCI 1B">An Integrated Introduction to the Life Sciences: Genetics, Genomics, and Evolution</a></h5>
+							<p><i>LIFESCI 1B</i></p>
+							<p><b>Spring 2019</b></p>
+							<p>How are observable characteristics of organisms influenced by genetics? How do genomes change over time to produce the differences we see among species? This course takes an integrated approach, showing how genetics and evolution are intimately related, together explaining the patterns of genetic variation we see in nature, and how genomics can be used to analyze variation. In covering Mendelian genetics, quantitative genetics, and population genetics, this course will emphasize developments involving our own species.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 3.8/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~6.8</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/aberry.jpg"></div>
+							<h6>Andrew Berry, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+
+				<!-- popcourse4 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/cgis.jpg" alt="">
+						<div class="price">MW 9AM-10:15AM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=EXPOS 20 253">Expository Writing 20 (Wastelands)</a></h5>
+							<p><i>EXPOS 20 253</i></p>
+							<p><b>Spring 2019</b></p>
+							<p>An intensive seminar that aims to improve each student’s ability to discover and reason about evidence through the medium of essays. Each section focuses on a particular theme or topic. In this course, we will grapple with both imaginary and actual wastelands. Along the way, we will investigate how wastelands form and evolve, and how people adapt to them. Are wastelands actually the places we should avoid at all costs, or are they the places we can no longer afford to ignore?</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 4/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~5.5</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/collier.jpg"></div>
+							<h6>Collier Brown, <span>Preceptor</span></h6>
+						</div>
+					</div>
+				</div>
+
+				<!-- popcourse5 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/sls20.jpg" alt="">
+						<div class="price">MWF 10:30AM-11:45AM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=SCILIVSY 20">Psychological Science</a></h5>
+							<p><i>SCILIVSY 20</i></p>
+							<p><b>Fall 2018</b></p>
+							<p>An introduction to the sciences of mind, including foundational concepts from neuroscience, evolution, genetics, philosophy, and experimental methods, and specific topics such as perception, memory, reasoning and decision-making, consciousness, child development, psychopathology, personality, language, emotion, sexuality, violence, morality and social relations.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 3.9/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~3.4</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/jmitchell.jpg"></div>
+							<h6>Jason Mitchell, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+				<!-- popcourse6 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/barker.jpg" alt="">
+						<div class="price">M 3:00PM-5:45PM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=ENGLISH CHCR">Advanced Poetry: Workshop</a></h5>
+							<p><i>ENGLISH CHCR</i></p>
+							<p><b>Fall 2018</b></p>
+							<p>By guided reading, classroom discussion, one on one conference, and formal and structural experimentation, members of the Advanced Poetry Workshop will look to hone, deepen, and challenge the development of their poetic inquiry and aesthetic. Students will be required to write and submit one new poem each week and to perform in-depth, weekly critiques of their colleagues' work.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 4.8/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~5.3</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/jbell.jpg"></div>
+							<h6>Josh Bell, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+				<!-- popcourse7 -->
+				<div class="course-item">
+					<figure class="course-preview">
+						<img src="static/img/animeas" alt="">
+						<div class="price">TTh 1:30PM-2:45PM</div>
+					</figure>
+					<div class="course-content">
+						<div class="cc-text">
+							<h5><a href="/course?q=AESTHINT 53">Anime as Global Popular Culture</a></h5>
+							<p><i>AESTHINT 53</i></p>
+							<p><b>Fall 2018</b></p>
+							<p>This course examines Japanese animation (or anime) through its generic conventions, formal aesthetic, and narrative motifs. At the same time, the course approaches anime as a lens through which we study contemporary media culture and its local and global production, distribution, and reception.</p>
+							<span><i class="flaticon-student-2"></i>Q Score: 4.4/5<br>
+							<i class="flaticon-placeholder"></i>Hours Per Week: ~3.5</span>
+						</div>
+						<div class="seller-info">
+							<div class="seller-pic set-bg" data-setbg="static/img/tyoda.jpg"></div>
+							<h6>Tomiko Yoda, <span>Professor</span></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><br><br><br><br>
+	<!-- Courses section end -->
+
+	<!-- 4ch form -->
+	<br><br><br><section class="multi-search-section">
+		<div class="msf-warp">
+			<div class="container">
+				<h5>Advanced Course Search</h5>
+				<form class="multi-search-form" action="/" method="post">
+
+					<select class="form-control" name="department">
+						<option selected>Any Department</option>
+						<option>African & African American Studies</option>
+			            <option>Anthropology</option>
+			            <option>Applied Mathematics</option>
+			            <option>Astrophysics</option>
+			            <option>Biomedical Engineering</option>
+			            <option>Chemical and Physical Biology</option>
+			            <option>Chemistry</option>
+			            <option>Chemistry and Physics</option>
+			            <option>Classics</option>
+			            <option>Comparative Literature</option>
+			            <option>Computer Science</option>
+			            <option>Earth and Planetary Sciences</option>
+			            <option>East Asian Studies</option>
+			            <option>Economics</option>
+			            <option>Electrical Engineering</option>
+			            <option>Engineering Sciences</option>
+			            <option>English</option>
+			            <option>Environmental Science and Engineering</option>
+			            <option>Environmental Science and Public Policy</option>
+			            <option>Folklore and Mythology</option>
+			            <option>General Education</option>
+			            <option>Germanic Languages and Literatures</option>
+			            <option>Government</option>
+			            <option>History</option>
+			            <option>History and Literature</option>
+			            <option>History and Science</option>
+			            <option>History of Art and Architecture</option>
+			            <option>Human Developmental and Regenerative Biology</option>
+			            <option>Human Evolutionary Biology</option>
+			            <option>Integrative Biology</option>
+			            <option>Linguistics</option>
+			            <option>Mathematics</option>
+			            <option>Mechanical Engineering</option>
+			            <option>Molecular and Cellular Biology</option>
+			            <option>Music</option>
+			            <option>Near Eastern Languages and Civilizations</option>
+			            <option>Neurobiology</option>
+			            <option>Philosophy</option>
+			            <option>Physics</option>
+			            <option>Psychology</option>
+			            <option>Comparative Study of Religion</option>
+			            <option>Romance Languages and Literatures</option>
+			            <option>Slavic Languages and Literatures</option>
+			            <option>Social Studies</option>
+			            <option>Sociology</option>
+			            <option>South Asian Studies</option>
+			            <option>Special Concentrations</option>
+			            <option>Statistics</option>
+			            <option>Theater, Dance, and Media</option>
+			            <option>Visual and Environmental Studies</option>
+			            <option>Studies of Women, Gender, and Sexuality</option>
+				    </select>
+					<br>
+				    <select class="form-control" name="daytime">
+				    	<option selected>Any Time</option>
+						{% for each in range(times_len) %}
+						<option>{{ times[each] }}</option>
+        				{% endfor %}
+				    </select>
+					<br>
+				    <select class="form-control" name="overall">
+				      <option selected>Any Course Rating</option>
+				      <option>3.0+</option>
+				      <option>3.5+</option>
+				      <option>4.0+</option>
+				      <option>4.5+</option>
+				      <option>5</option>
+				    </select>
+					<br>
+				    <select class="form-control" name="instrat">
+				      <option selected>Any Instructor Rating</option>
+				      <option>3.0+</option>
+				      <option>3.5+</option>
+				      <option>4.0+</option>
+				      <option>4.5+</option>
+				      <option>5</option>
+				    </select>
+					<br>
+					<select class="form-control" name="workload">
+				      <option selected>Any Weekly Workload</option>
+				      <option>< 2 hrs</option>
+				      <option>2-4.9 hrs</option>
+				      <option>5-7.9 hrs</option>
+				      <option>8-10 hrs</option>
+				      <option>> 10 hrs</option>
+				    </select>
+				    <br>
+					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services section -->
+	<section class="services-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-apple"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://college.harvard.edu/financial-aid">Harvard Financial Aid Office</a></h5>
+						<p><i>"Each School at Harvard has its own administrative offices, including a financial aid office, and is responsible for awarding aid to its own students."</i></p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-mortarboard"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://ocs.fas.harvard.edu/">Office of Career Services</a></h5>
+						<p><i>"The Office of Career Services is dedicated to educating, advising, and connecting students to opportunities for summer and post-graduation in order to foster their intellectual, social, and personal transformations."</i></p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-idea"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://oie.fas.harvard.edu/">Office of International Education</a></h5>
+						<p><i>"The Office of International Education (OIE) works with undergraduate students who are planning for a significant academic year, term, or summer international experience."</i></p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-medal"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://bsc.harvard.edu/">Bureau of Study Counsel</a></h5>
+						<p><i>"The BSC supports each student’s unique experience as they learn, grow, and engage in Harvard’s educational opportunities. Come to the BSC to explore your learning practices, perspectives, and possibilities."</i></p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-question"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://registrar.fas.harvard.edu/">Registrar's Office</a></h5>
+						<p><i>"The Registrar of the Faculty of Arts and Sciences serves faculty, students, staff, and alumni of Harvard College, the Graduate School of Arts and Sciences, and the School of Engineering and Applied Sciences."</i></p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 service-item">
+					<div class="si-icon">
+						<i class="flaticon-learning"></i>
+					</div>
+					<div class="si-content">
+						<h5><a href="https://college.harvard.edu/about/college-offices">List of Offices</a></h5>
+						<p><i>This is a general list of the college offices aiming to enrich the Harvard student's overall experience.</i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services section end -->
+
+
+	<!-- Fact section -->
+	<section class="fact-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-6 fact-item">
+					<figure>
+						<img src="/static/img/icons/1.png" alt="">
+					</figure>
+					<h2>22,947</h2>
+					<p>Total Students</p>
+				</div>
+				<div class="col-lg-3 col-sm-6 fact-item">
+					<figure>
+						<img src="/static/img/icons/2.png" alt="">
+					</figure>
+					<h2>6,655</h2>
+					<p>Undergraduate Students</p>
+				</div>
+				<div class="col-lg-3 col-sm-6 fact-item">
+					<figure>
+						<img src="/static/img/icons/3.png" alt="">
+					</figure>
+					<h2>16,000</h2>
+					<p>Staff & Faculty</p>
+				</div>
+				<div class="col-lg-3 col-sm-6 fact-item">
+					<figure>
+						<img src="/static/img/icons/4.png" alt="">
+					</figure>
+					<h2>3,700+</h2>
+					<p>Courses Offered</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Fact section end -->
+
+
+
+	<!-- Footer section -->
+	<footer class="footer-section spad pb-0">
+		<div class="container">
+			<div class="row text-white spad">
+				<div class="col-lg-3 col-sm-6 footer-widget">
+			</div>
+			<div class="footer-bottom">
+				<ul class="footer-menu">
+					<li><a href="/"><i>Portal</i></a></li>
+					<li><a href="/profile"><i>Personal Information</i></a></li>
+					<li><a href="/courses"><i>Courses</i></a></li>
+                    <li><a href="https://canvas.harvard.edu/"><i>Canvas</i></a></li>
+                    <li><a href="https://facebook.college.harvard.edu//searchform"><i>Student Directory</i></a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<p class="text-white  text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+
+
+
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/circle-progress.min.js"></script>
+	<script src="/static/js/main.js"></script>
+
+
+</body>
+</html>
